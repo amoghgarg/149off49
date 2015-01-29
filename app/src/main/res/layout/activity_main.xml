@@ -1,0 +1,69 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"  android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp">
+
+    <EditText android:id="@+id/ip_addr"
+        android:digits="0123456789./abcdefghijklmnopqrstuvwxyz"
+       android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/ip_addr" />
+
+    <EditText android:id="@+id/portNo"
+        android:digits="0123456789"
+        android:inputType=""
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/portNo"
+        android:layout_below="@id/ip_addr"/>
+
+    <EditText android:id="@+id/packetText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/packetText"
+        android:layout_below="@id/portNo"/>
+
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_start"
+        android:onClick="startService"
+        android:layout_above="@+id/manyButton"/>
+    <LinearLayout
+        android:id="@+id/manyButton"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:visibility="gone"
+            android:id="@+id/pauseButton"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/button_pause"
+            android:onClick="pauseService"/>
+        <Button
+            android:visibility="gone"
+            android:id="@+id/resumeButton"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/button_resume"
+            android:onClick="resumeService"
+            android:layout_alignParentRight="true"/>
+        <Button
+            android:visibility="gone"
+            android:id="@+id/stopButton"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/button_stop"
+            android:onClick="stopService"
+            android:layout_alignParentRight="true"/>
+    </LinearLayout>
+ </RelativeLayout>
